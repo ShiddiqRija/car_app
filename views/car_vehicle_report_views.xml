@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    
+        <!-- View -->
+        <record id="car_vehicle_cost_view_graph" model="ir.ui.view">
+            <field name="name">car.vehicle.cost.view.graph</field>
+            <field name="model">car.vehicle.cost</field>
+            <field name="arch" type="xml">
+                <graph string="Vehicles costs">
+                    <field name="vehicle_id"/>
+                    <field name="date" interval="year"/>
+                    <field name="amount" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="car_vehicle_cost_report_wizard_view_form" model="ir.ui.view">
+            <field name="name">car.vehicle.cost.report.wizard.view.form</field>
+            <field name="model">car.vehicle.report.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Print Report">
+                    <sheet>
+                        <group>
+                            <field name="vehicle_id" />
+                        </group>
+                        <group>
+                            <field name="start_period" />
+                            <field name="end_period" />
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button
+                            name="action_print_report"
+                            type="object"
+                            string="Print"
+                            class="btn btn-primary" />
+                        <button
+                            string="Cancel"
+                            class="btn btn-primary"
+                            special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="car_vehicle_report_cost_action" model="ir.actions.act_window">
+            <field name="name">Costs Report</field>
+            <field name="res_model">car.vehicle.cost</field>
+            <field name="view_mode">graph</field>
+        </record>
+        
+        <record id="car_vehicle_cost_graph_action" model="ir.actions.act_window.view">
+            <field name="sequence" eval="1" />
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="car_vehicle_cost_view_graph"/>
+            <field name="act_window_id" ref="car_vehicle_report_cost_action"/>
+        </record>
+
+        <record id="car_vehicle_print_report_wizard_action" model="ir.actions.act_window">
+            <field name="name">Cost Report</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">car.vehicle.report.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="car_vehicle_cost_report_wizard_view_form" />
+            <field name="target">new</field>
+        </record>
+
+        <record id="car_vehicle_report_cost_print_action" model="ir.actions.report">
+            <field name="name">Cost Details</field>
+            <field name="model">car.vehicle.cost</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">car_app.report_cost_details</field>
+            <field name="report_file">car_app.report_cost_details</field>
+            <field name="binding_model_id" eval="False"/>
+        </record>
+    
+    </data>
+
+</odoo>

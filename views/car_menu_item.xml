@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    
+        <menuitem
+            id="root_menu"
+            name="Car App"
+            sequence="3"
+            web_icon="car_app,static/description/icon.png"/>
+
+            <menuitem
+                id="car_vehicle_menu"
+                name="Vehicles"
+                parent="root_menu"
+                sequence="1"/>
+
+                <menuitem
+                    id="car_vehicle_info_menu"
+                    name="Vehicles"
+                    action="car_vehicle_action"
+                    parent="car_vehicle_menu"
+                    sequence="1"/>
+
+                <menuitem
+                    id="car_vehicle_odometer_menu"
+                    name="Odometers"
+                    action="car_vehicle_odometer_action"
+                    parent="car_vehicle_menu"
+                    sequence="2"/>
+
+                <menuitem
+                    id="car_vehicle_cost_menu"
+                    name="Costs"
+                    action="car_vehicle_cost_action"
+                    parent="car_vehicle_menu"
+                    sequence="3"/>
+
+                <menuitem
+                    id="car_fuel_log_menu"
+                    name="Fuel Logs"
+                    action="car_vehicle_fuel_log_action"
+                    parent="car_vehicle_menu"
+                    sequence="4"/>
+                
+                <menuitem
+                    id="car_service_log_menu"
+                    name="Service Logs"
+                    action="car_vehicle_service_log_action"
+                    parent="car_vehicle_menu"
+                    sequence="5"/>
+
+                <menuitem
+                    id="car_vehicle_model_menu"
+                    name="Models"
+                    action="car_vehicle_model_action"
+                    parent="car_vehicle_menu"
+                    sequence="6"/>
+            
+            <menuitem
+                id="car_report_menu"
+                name="Reporting"
+                parent="root_menu"
+                sequence="2"/>
+
+                <menuitem
+                    id="car_report_cost_menu"
+                    name="Costs"
+                    action="car_vehicle_report_cost_action"
+                    parent="car_report_menu"
+                    sequence="1"/>
+
+                <menuitem
+                    id="car_report_cost_wizard_menu"
+                    name="Print Report"
+                    action="car_vehicle_print_report_wizard_action"
+                    parent="car_report_menu"
+                    sequence="2"/>
+            
+            <menuitem
+                id="car_configuration_menu"
+                name="Configuration"
+                parent="root_menu"
+                sequence="3"/>
+
+                <menuitem
+                    id="car_brand_menu"
+                    name="Car Brand"
+                    action="car_vehicle_model_brand_action"
+                    parent="car_configuration_menu"
+                    sequence="1"/>
+
+                <menuitem
+                    id="car_service_type_menu"
+                    name="Service Type"
+                    action="car_vehicle_service_type_action"
+                    parent="car_configuration_menu"
+                    sequence="2"/>
+
+    </data>
+    
+
+</odoo>

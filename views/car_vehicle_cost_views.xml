@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+
+        <!-- View -->
+
+        <!-- Cost -->
+        <record id="car_vehicle_cost_view_tree" model="ir.ui.view">
+            <field name="name">car.vehicle.cost.view.tree</field>
+            <field name="model">car.vehicle.cost</field>
+            <field name="arch" type="xml">
+                <tree string="Vehicle Costs">
+                    <field name="vehicle_id" />
+                    <field name="description" />
+                    <field name="cost_type_id" />
+                    <field name="date" />
+                    <field name="amount" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="car_vehicle_cost_view_form" model="ir.ui.view">
+            <field name="name">car.vehicle.cost.view.form</field>
+            <field name="model">car.vehicle.cost</field>
+            <field name="arch" type="xml">
+                <form string="Vehicle Costs">
+                    <sheet>
+                        <group string="Cost Details">
+                            <label for="vehicle_id" />
+                            <field name="vehicle_id" />
+                            <group>
+                                <field name="cost_type_id" />
+                                <field name="amount" />
+                            </group>
+                            <group>
+                                <field name="date" />
+                            </group>
+                            <label for="description" string="Cost Description" />
+                            <field name="description" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- Cost -->
+
+        <!-- Fuel Log -->
+        <record id="car_vehicle_fuel_log_view_tree" model="ir.ui.view">
+            <field name="name">car.vehicle.fuel.log.view.tree</field>
+            <field name="model">car.vehicle.fuel.log</field>
+            <field name="arch" type="xml">
+                <tree string="Fuel Logs">
+                    <field name="vehicle_id" />
+                    <field name="purchaser_id" />
+                    <field name="date" />
+                    <field name="liter" />
+                    <field name="amount" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="car_vehicle_fuel_log_view_form" model="ir.ui.view">
+            <field name="name">car.vehicle.fuel.log.view.form</field>
+            <field name="model">car.vehicle.fuel.log</field>
+            <field name="arch" type="xml">
+                <form string="Fuel Logs">
+                    <sheet>
+                        <group>
+                            <group string="Vehicle Details">
+                                <field name="vehicle_id" />
+                            </group>
+                            <group string="Refueling Details">
+                                <field name="liter" />
+                                <field name="price_per_liter" />
+                                <field name="amount" />
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Odometer Information">
+                                <field name="odometer" />
+                            </group>
+                            <group string="Additional Details">
+                                <field name="date" />
+                                <field name="purchaser_id" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- Fuel Log -->
+
+        <!-- Service Log -->
+        <record id="car_vehicle_service_log_view_tree" model="ir.ui.view">
+            <field name="name">car.vehicle.service.log.view.tree</field>
+            <field name="model">car.vehicle.service.log</field>
+            <field name="arch" type="xml">
+                <tree string="Service Logs">
+                    <field name="vehicle_id" />
+                    <field name="purchaser_id" />
+                    <field name="cost_type_id" />
+                    <field name="date" />
+                    <field name="amount" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="car_vehicle_service_log_view_form" model="ir.ui.view">
+            <field name="name">car.vehicle.service.log.view.form</field>
+            <field name="model">car.vehicle.service.log</field>
+            <field name="arch" type="xml">
+                <form string="Service Logs">
+                    <sheet>
+                        <group>
+                            <group string="Service Details">
+                                <field name="vehicle_id" />
+                                <field name="cost_type_id" />
+                                <field name="amount" />
+                            </group>
+                            <group string="Odometer Information">
+                                <field name="odometer" />
+                            </group>
+                        </group>
+                        <group>
+                            <group string="Additional Details">
+                                <field name="date" />
+                                <field name="purchaser_id" />
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- Service Log -->
+
+        <!-- Action -->
+        <record id="car_vehicle_cost_action" model="ir.actions.act_window">
+            <field name="name">Cost</field>
+            <field name="res_model">car.vehicle.cost</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="car_vehicle_fuel_log_action" model="ir.actions.act_window">
+            <field name="name">Fuel Logs</field>
+            <field name="res_model">car.vehicle.fuel.log</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="car_vehicle_service_log_action" model="ir.actions.act_window">
+            <field name="name">Service Logs</field>
+            <field name="res_model">car.vehicle.service.log</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+
+</odoo>

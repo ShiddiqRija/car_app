@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_car_vehicle,access_car_vehicle,model_car_vehicle,,1,1,1,1
+access_car_vehicle_odometer,access_car_vehicle_odometer,model_car_vehicle_odometer,,1,1,1,1
+access_car_service_type,access_car_service_type,model_car_service_type,,1,1,1,1
+access_car_vehicle_assignation_log,access_car_vehicle_assignation_log,model_car_vehicle_assignation_log,,1,1,1,1
+access_car_vehicle_model,access_car_vehicle_model,model_car_vehicle_model,,1,1,1,1
+access_car_vehicle_model_brand,access_car_vehicle_model_brand,model_car_vehicle_model_brand,,1,1,1,1
+access_car_vehicle_cost,access_car_vehicle_cost,model_car_vehicle_cost,,1,1,1,1
+access_car_vehicle_fuel_log,access_car_vehicle_fuel_log,model_car_vehicle_fuel_log,,1,1,1,1
+access_car_vehicle_service_log,access_car_vehicle_service_log,model_car_vehicle_service_log,,1,1,1,1
+access_car_vehicle_report_wizard,access_car_vehicle_report_wizard,model_car_vehicle_report_wizard,,1,1,1,1
